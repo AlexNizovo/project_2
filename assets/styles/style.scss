@@ -142,7 +142,8 @@ $color-red: #E71414;
     width: 100vw;
     height: 100vh;
     position: relative;
-    padding: 230px 15px 120px;
+    padding-top: 230px;
+    padding-bottom: 120px;
 
     &__wrap {
         display: flex;
@@ -152,11 +153,13 @@ $color-red: #E71414;
     }
 
     @media (min-width: 768px) and (max-width: 1024px) {
-        padding: 257px 15px 126px; 
+        padding-top: 257px;
+        padding-bottom: 126px; 
     }
 
     @media (min-width: 320px) and (max-width: 767px) {
-        padding: 106px 15px 52px;
+        padding-top: 106px;
+        padding-bottom: 52px;
     }
 
     &::before {
@@ -247,5 +250,125 @@ $color-red: #E71414;
             background: #FF4343;
             box-shadow: 4px 4px 30px #FF4343;
         }
+    }
+}
+
+.features {
+    padding-top: 116px;
+    padding-bottom: 134px;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        padding-top: 78px;
+        padding-bottom: 80px; 
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+        padding-top: 40px;
+        padding-bottom: 35px;
+    }
+
+    .container {
+        @include containerStyle();
+    }
+
+    &__wrap {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+
+    .feature__block {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        max-width: 370px;
+        margin-bottom: 88px;
+        width: calc((100% - 58px) / 3);
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            max-width: 315px;
+            width: calc((100% - 40px) / 3);
+            margin-bottom: 50px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            max-width: 279px;
+            width: 100%;
+            margin-bottom: 41px;
+        }
+
+        &-icon {
+            max-width: 100px;
+            max-height: 100px;
+            margin-bottom: 29px;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                max-width: 85px;
+                max-height: 84px;
+                margin-bottom: 24px;
+            }
+        
+            @media (min-width: 320px) and (max-width: 767px) {
+                max-width: 76px;
+                max-height: 76px;
+                margin-bottom: 21px;
+            }
+
+            .icon__svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &-title {
+            font-family: $font-Raleway;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #2D3033;
+            margin-bottom: 20px;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                font-size: 18px;
+                line-height: 21px;
+                margin-bottom: 4px;
+            }
+
+            @media (min-width: 320px) and (max-width: 767px) {
+                font-size: 18px;
+                line-height: 21px;
+                margin-bottom: 12px;
+            }
+        }
+
+        &-text {
+            font-family: $font-Raleway;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            text-align: center;
+            color: #6C7279;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+            @media (min-width: 320px) and (max-width: 768px) {
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+        }
+
     }
 }
