@@ -254,15 +254,18 @@ $color-red: #E71414;
 }
 
 .features {
+    //отступы между элементами - margin
     padding-top: 116px;
     padding-bottom: 134px;
 
     @media (min-width: 768px) and (max-width: 1024px) {
+        //отступы между элементами - margin
         padding-top: 78px;
         padding-bottom: 80px; 
     }
 
     @media (min-width: 320px) and (max-width: 767px) {
+         //отступы между элементами - margin
         padding-top: 40px;
         padding-bottom: 35px;
     }
@@ -284,11 +287,17 @@ $color-red: #E71414;
     }
 
     .feature__block {
+
+        //не думаю, что здесь вообще нужен флекс - элементы и так друг под другом находятся
         display: flex;
         align-items: center;
         flex-direction: column;
-        max-width: 370px;
+        
+        //отступ вниз убрать - добавь через гап
         margin-bottom: 88px;
+
+        //тут или калк, или ограничение (лучше исправить через грид) ! в медиа тоже проверить
+        max-width: 370px;
         width: calc((100% - 58px) / 3);
 
         @media (min-width: 768px) and (max-width: 1024px) {
@@ -298,6 +307,8 @@ $color-red: #E71414;
         }
     
         @media (min-width: 320px) and (max-width: 767px) {
+
+            //не ограничиваем на мобилке - по всей ширине
             max-width: 279px;
             width: 100%;
             margin-bottom: 41px;

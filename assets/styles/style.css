@@ -278,8 +278,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  max-width: 370px;
   margin-bottom: 88px;
+  max-width: 370px;
   width: calc((100% - 58px) / 3);
 }
 @media (min-width: 768px) and (max-width: 1024px) {
