@@ -472,3 +472,152 @@ $color-red: #E71414;
 
     }
 }
+
+.team {
+    @include containerStyle();
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 114px;
+
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            gap: 25px;
+            margin-bottom: 78px; 
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            flex-direction: column;
+            gap: 49px;
+            margin-bottom: 49px;
+        }
+    }
+
+    &__person {
+        width: calc((100% - 90px) / 4);
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            width: calc((100% - 75px) / 4);
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            width: 100%;
+        }
+
+        &-photo {
+            margin-bottom: 30px;
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                padding-top: 100%;
+            }    
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                margin-bottom: 25px;
+            }
+        
+            @media (min-width: 320px) and (max-width: 767px) {
+                margin-bottom: 25px;
+            }
+
+            .team__person-img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        
+            &-name {
+            font-family: $font-Raleway;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 28px;
+            text-transform: capitalize;
+            color: #2D3033;
+            margin-bottom: 5px;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        
+            @media (min-width: 320px) and (max-width: 767px) {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+
+        &-function {
+            font-family: $font-Raleway;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            text-transform: uppercase;
+            color: #FF4343;
+            margin-bottom: 17px;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                font-size: 14px;
+                line-height: 16px;
+                margin-bottom: 22px;
+            }
+        
+            @media (min-width: 320px) and (max-width: 767px) {
+                font-size: 14px;
+                line-height: 16px;
+                margin-bottom: 38px;
+            }
+        }
+        &-info {
+            font-family: $font-Raleway;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            color: #6C7279;
+            margin-bottom: 37px;
+            
+            @media (min-width: 768px) and (max-width: 1024px) {
+                font-size: 14px;
+                line-height: 16px;
+                margin-bottom: 39px;
+            }
+        
+            @media (min-width: 320px) and (max-width: 767px) {
+                font-size: 14px;
+                line-height: 16px;
+                margin-bottom: 55px;
+            }
+        }
+
+        &-messangers {
+            display: flex;
+            align-items: center;
+
+            .person__messanger {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 39px;
+                height: 39px;
+                border: 1px solid #C6CBCD;
+
+                @media (min-width: 768px) and (max-width: 1024px) {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+    }
+}
