@@ -1,5 +1,474 @@
+$font-Raleway: "Raleway", sans-serif;
+$color-white: #FFFFFF;
+$color-red: #E71414;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+@mixin containerStyle {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background: transparent;
+
+    .container {
+        @include containerStyle();
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(186, 187, 197);
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            border-bottom: 1px transparent;
+        }
+    }
+
+    &__logo {
+        max-width: 183.86px;
+        max-height: 25.75px;
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            max-width: 130px;
+            max-height: 56px;
+        }
+
+        &-svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__menu {
+        display: block;
+
+        &-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+
+            .menu__item-link {
+                font-family: $font-Raleway;
+                font-weight: 700;
+                font-size: 13px;
+                line-height: 15px;
+                text-align: center;
+                text-transform: uppercase;
+                color: $color-white;
+                text-decoration: none;
+                padding: 36px 10px;
+                text-decoration: none;
+                display: inline-block;
+                min-width: 134px;
+                position: relative;
+
+                @media (min-width: 768px) and (max-width: 1024px) {
+                    min-width: 119px;
+                    font-size: 12px;
+                    line-height: 14px;    
+                }
+                @media (min-width: 320px) and (max-width: 767px) {
+                    display: none;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    border: 3px solid transparent;
+                    top: 100%;
+                    left: 0;
+                    transform: translateY(-100%);
+                }
+
+                &:hover::before {
+                    border: 3px solid #BABBC5;
+                }
+
+                &:active {
+                    color: $color-red;
+                    &::before {
+                        border: 3px solid $color-red;
+                    }
+                }
+
+            }
+        }
+
+        .hamburger {
+            display: none;
+            max-width: 55px;
+            max-height: 56px;
+            padding: 19px 16px;
+
+            &__block {
+                max-width: 24px;
+                max-height: 18px;
+            }
+
+            @media (min-width: 320px) and (max-width: 767px) {
+                display: block;
+            }
+
+            &__logo {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+}
+
+.banner {
+    background-image: url(../image/bcg-banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    padding-top: 230px;
+    padding-bottom: 120px;
+    margin-bottom: 127px;
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        padding-top: 257px;
+        padding-bottom: 126px;
+        margin-bottom: 78px; 
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+        padding-top: 106px;
+        padding-bottom: 52px;
+        margin-bottom: 40px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        background: #252B49;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 80%;
+    }
+    .container {
+        @include containerStyle();
+    }
+
+    &__title {
+        position: relative;
+        font-family: $font-Raleway;
+        font-weight: 900;
+        font-size: 64px;
+        line-height: 75px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-white;
+        margin-bottom: 47px;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            font-size: 48px;
+            line-height: 56px;
+            margin-bottom: 61px; 
+        }
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 36px;
+            line-height: 42px;
+        }
+    }
+
+    &__text {
+        font-family: $font-Raleway;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        color: $color-white;
+        margin-bottom: 79px;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            font-size: 18px;
+            line-height: 21px;
+            margin-bottom: 89px; 
+        }
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 49px;
+        }
+    }
+    &__btn {
+        display: inline-block;
+        min-width: 369px;
+        font-family: $font-Raleway;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-white;
+        background: #FE4343;
+        text-decoration: none;
+        padding: 24px 0;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            min-width: 314px;
+        }
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            min-width: 280px;
+        }
+
+        &:hover {
+            background: #E71414;
+        }
+
+        &:active {
+            background: #FF4343;
+            box-shadow: 4px 4px 30px #FF4343;
+        }
+    }
+}
+
+.features {
+    margin-bottom: 134px;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        margin-bottom: 80px; 
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+        margin-bottom: 35px;
+    }
+
+    .container {
+        @include containerStyle();
+    }
+
+    &__wrap {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 24px;
+        row-gap: 88px;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 20px;
+            row-gap: 50px;
+        }
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            grid-template-columns: 1fr;
+            row-gap: 41px;
+        }
+    }
+
+    .feature__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-icon {
+            max-width: 100px;
+            max-height: 100px;
+            margin-bottom: 29px;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                max-width: 85px;
+                max-height: 84px;
+                margin-bottom: 24px;
+            }
+
+            @media (min-width: 320px) and (max-width: 767px) {
+                max-width: 76px;
+                max-height: 76px;
+                margin-bottom: 21px;
+            }
+
+            .icon__svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &-title {
+            font-family: $font-Raleway;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #2D3033;
+            margin-bottom: 44px;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                font-size: 18px;
+                line-height: 21px;
+                margin-bottom: 44px;
+            }
+
+            @media (min-width: 320px) and (max-width: 767px) {
+                font-size: 18px;
+                line-height: 21px;
+                margin-bottom: 16px;
+            }
+        }
+
+        &-text {
+            font-family: $font-Raleway;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            text-align: center;
+            color: #6C7279;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+            @media (min-width: 320px) and (max-width: 768px) {
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+    }
+}
+
+.works {
+    margin-bottom: 108px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    @media (min-width: 320px) and (max-width: 767px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__work {
+        position: relative;
+        display: block;
+
+        &::before {
+            content: "";
+            display: block;
+            padding-top: 89.9%;
+        }
+        &-img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 67, 67, 0.8);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                row-gap: 12px;
+            }
+
+            @media (min-width: 320px) and (max-width: 767px) {
+                row-gap: 5px;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &:active {
+                background: rgba(185, 12, 12, 0.8);
+                opacity: 1;
+            }
+
+        }
+
+        &-title {
+            font-family: $font-Raleway;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            color: $color-white;
+            text-transform: uppercase;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                font-size: 18px;
+                line-height: 21px;
+            }
+
+            @media (min-width: 320px) and (max-width: 767px) {
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+
+        &-text {
+            font-family: $font-Raleway;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            text-align: center;
+            color: $color-white;
+            text-transform: capitalize;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                font-size: 18px;
+                line-height: 21px;
+            }
+
+            @media (min-width: 320px) and (max-width: 767px) {
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+
+    }
 }
