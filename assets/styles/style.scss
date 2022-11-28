@@ -144,6 +144,7 @@ $color-red: #E71414;
     position: relative;
     padding-top: 230px;
     padding-bottom: 120px;
+    margin-bottom: 127px;
 
     &__wrap {
         display: flex;
@@ -154,12 +155,14 @@ $color-red: #E71414;
 
     @media (min-width: 768px) and (max-width: 1024px) {
         padding-top: 257px;
-        padding-bottom: 126px; 
+        padding-bottom: 126px;
+        margin-bottom: 78px; 
     }
 
     @media (min-width: 320px) and (max-width: 767px) {
         padding-top: 106px;
         padding-bottom: 52px;
+        margin-bottom: 40px;
     }
 
     &::before {
@@ -254,20 +257,14 @@ $color-red: #E71414;
 }
 
 .features {
-    //отступы между элементами - margin
-    padding-top: 116px;
-    padding-bottom: 134px;
-
+    margin-bottom: 134px;
+    
     @media (min-width: 768px) and (max-width: 1024px) {
-        //отступы между элементами - margin
-        padding-top: 78px;
-        padding-bottom: 80px; 
+        margin-bottom: 80px; 
     }
 
     @media (min-width: 320px) and (max-width: 767px) {
-         //отступы между элементами - margin
-        padding-top: 40px;
-        padding-bottom: 35px;
+        margin-bottom: 35px;
     }
 
     .container {
@@ -275,44 +272,29 @@ $color-red: #E71414;
     }
 
     &__wrap {
-        display: flex;
-        position: relative;
+        display: grid;
         align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        justify-content: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 24px;
+        row-gap: 88px;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 20px;
+            row-gap: 50px;
+        }
 
         @media (min-width: 320px) and (max-width: 767px) {
-            flex-direction: column;
+            grid-template-columns: 1fr;
+            row-gap: 41px;
         }
     }
 
     .feature__block {
-
-        //не думаю, что здесь вообще нужен флекс - элементы и так друг под другом находятся
         display: flex;
-        align-items: center;
         flex-direction: column;
-        
-        //отступ вниз убрать - добавь через гап
-        margin-bottom: 88px;
-
-        //тут или калк, или ограничение (лучше исправить через грид) ! в медиа тоже проверить
-        max-width: 370px;
-        width: calc((100% - 58px) / 3);
-
-        @media (min-width: 768px) and (max-width: 1024px) {
-            max-width: 315px;
-            width: calc((100% - 40px) / 3);
-            margin-bottom: 50px;
-        }
-    
-        @media (min-width: 320px) and (max-width: 767px) {
-
-            //не ограничиваем на мобилке - по всей ширине
-            max-width: 279px;
-            width: 100%;
-            margin-bottom: 41px;
-        }
+        align-items: center;
 
         &-icon {
             max-width: 100px;
@@ -345,18 +327,18 @@ $color-red: #E71414;
             text-align: center;
             text-transform: uppercase;
             color: #2D3033;
-            margin-bottom: 20px;
+            margin-bottom: 44px;
 
             @media (min-width: 768px) and (max-width: 1024px) {
                 font-size: 18px;
                 line-height: 21px;
-                margin-bottom: 4px;
+                margin-bottom: 44px;
             }
 
             @media (min-width: 320px) and (max-width: 767px) {
                 font-size: 18px;
                 line-height: 21px;
-                margin-bottom: 12px;
+                margin-bottom: 16px;
             }
         }
 
@@ -378,8 +360,6 @@ $color-red: #E71414;
                 font-size: 14px;
                 line-height: 16px;
             }
-
         }
-
     }
 }
