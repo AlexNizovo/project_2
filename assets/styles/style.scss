@@ -473,7 +473,8 @@ $color-red: #E71414;
 
 .team {
     @include containerStyle();
-
+    margin-bottom: 114px;
+    
     &__wrap {
         display: flex;
         align-items: center;
@@ -481,7 +482,7 @@ $color-red: #E71414;
         gap: 30px;
 
         //этот отступ у обертки, а не у контейнера
-        margin-bottom: 114px;
+       
 
 
         @media (min-width: 768px) and (max-width: 1024px) {
@@ -606,19 +607,19 @@ $color-red: #E71414;
         &-messangers {
             display: flex;
             align-items: center;
+        }
 
-            .person__messanger {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 39px;
-                height: 39px;
-                border: 1px solid #C6CBCD;
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 39px;
+            height: 39px;
+            border: 1px solid #C6CBCD;
 
-                @media (min-width: 768px) and (max-width: 1024px) {
-                    width: 32px;
-                    height: 32px;
-                }
+            @media (min-width: 768px) and (max-width: 1024px) {
+                width: 32px;
+                height: 32px;
             }
         }
     }
