@@ -479,6 +479,8 @@ $color-red: #E71414;
         align-items: center;
         justify-content: space-between;
         gap: 30px;
+
+        //этот отступ у обертки, а не у контейнера
         margin-bottom: 114px;
 
 
@@ -523,15 +525,17 @@ $color-red: #E71414;
                 margin-bottom: 25px;
             }
 
-            .team__person-img {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                left: 0;
-                top: 0;
-                object-fit: cover;
-                object-position: center;
-            }
+        }
+
+        //здесь вынесена вложенность как пример
+        &-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            object-fit: cover;
+            object-position: center;
         }
         
             &-name {
