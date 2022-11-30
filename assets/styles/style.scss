@@ -138,6 +138,7 @@ $color-red: #E71414;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    width: 100vw;
     height: 100vh;
     position: relative;
     padding-top: 230px;
@@ -290,13 +291,16 @@ $color-red: #E71414;
     }
 
     .feature__block {
-        text-align: center;
-        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         &-icon {
             display: inline-block;
             max-width: 100px;
             max-height: 100px;
             margin-bottom: 29px;
+            display: inline-block;
 
             @media (min-width: 768px) and (max-width: 1024px) {
                 max-width: 85px;
