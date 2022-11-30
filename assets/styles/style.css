@@ -121,7 +121,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  width: 100vw;
   height: 100vh;
   position: relative;
   padding-top: 230px;
@@ -286,9 +285,7 @@
   }
 }
 .features .feature__block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 .features .feature__block-icon {
   display: inline-block;
