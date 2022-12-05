@@ -625,3 +625,118 @@ $color-red: #E71414;
         }
     }
 }
+
+.testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+    margin-bottom: 114px;
+    
+    @media (min-width: 768px) and (max-width: 1024px) {
+        row-gap: 23PX;
+        margin-bottom: 78px;
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+        grid-template-columns: 1fr;
+        margin-bottom: 35px;
+        row-gap: 0;
+    }
+
+    &__photo {
+        
+        @media (min-width: 320px) and (max-width: 767px) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__testimonial {
+        padding: 116px 170px 116px 129px;
+        background: #5C3249;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            padding: 47px 104px 110px 88px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            padding: 30px 25px 95px 20px;
+            margin-bottom: 23px;
+        }
+    }
+
+    .testimonial__title {
+        font-family: "Cardo", serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 49px;
+        text-transform: capitalize;
+        margin-bottom: 29px;
+        color: #FFFFFF;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            font-size: 24px;
+            line-height: 32px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+
+    .testimonial__text {
+        font-family: $font-Raleway;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+
+    &__dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        column-gap: 25px;
+
+        &-slide {
+            border-radius: 50%;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #7E5D6F;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                width: 9px;
+                height: 9px;
+                }
+        
+            @media (min-width: 320px) and (max-width: 767px) {
+                width: 9px;
+                height: 9px;
+            }
+        }
+        .active {
+            background: #7E5D6F;
+        }
+    }
+}
