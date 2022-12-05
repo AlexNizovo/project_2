@@ -639,7 +639,7 @@ $color-red: #E71414;
 
     @media (min-width: 320px) and (max-width: 767px) {
         grid-template-columns: 1fr;
-        margin-bottom: 35px;
+        margin-bottom: 45px;
         row-gap: 0;
     }
 
@@ -739,4 +739,103 @@ $color-red: #E71414;
             background: #7E5D6F;
         }
     }
+}
+
+.download {
+    text-align: center;
+
+    @include containerStyle();
+
+    &__wrap {
+        margin-bottom: 114px;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            margin-bottom: 78px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            margin-bottom: 45px;
+        }
+
+    }
+
+    &__title {
+        font-family: $font-Raleway;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 35px;
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 27px;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            font-size: 24px;
+            line-height: 28px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 18px;
+            line-height: 21px;
+            margin-bottom: 25px;
+        }
+    }
+
+    &__text {
+        font-family: $font-Raleway;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 52px;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 44px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 13px;
+            line-height: 15px;
+            margin-bottom: 13px;
+        }
+    }
+
+    &__btn {
+        max-width: 370px;
+        width: 100%;
+        font-family: $font-Raleway;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        text-transform: uppercase;
+        background: #FF4343;
+        color: $color-white;
+        border: 1px solid #FF4343;
+        padding: 25px 0;
+
+        &:hover {
+            border-color: #E71414;
+            background: #E71414;
+        }
+
+        &:active {
+            box-shadow: 4px 4px 30px #FF4343;
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            max-width: 313px;
+            font-size: 18px;
+            line-height: 21px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            max-width: 279px;
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+
 }

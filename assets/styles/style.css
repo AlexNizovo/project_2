@@ -640,7 +640,7 @@
 @media (min-width: 320px) and (max-width: 767px) {
   .testimonials {
     grid-template-columns: 1fr;
-    margin-bottom: 35px;
+    margin-bottom: 45px;
     row-gap: 0;
   }
 }
@@ -744,4 +744,105 @@
 }
 .testimonials__dots .active {
   background: #7E5D6F;
+}
+
+.download {
+  text-align: center;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+  position: relative;
+}
+.download__wrap {
+  margin-bottom: 114px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .download__wrap {
+    margin-bottom: 78px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .download__wrap {
+    margin-bottom: 45px;
+  }
+}
+.download__title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 27px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .download__title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .download__title {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 25px;
+  }
+}
+.download__text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 52px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .download__text {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 44px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .download__text {
+    font-size: 13px;
+    line-height: 15px;
+    margin-bottom: 13px;
+  }
+}
+.download__btn {
+  max-width: 370px;
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  text-transform: uppercase;
+  background: #FF4343;
+  color: #FFFFFF;
+  border: 1px solid #FF4343;
+  padding: 25px 0;
+}
+.download__btn:hover {
+  border-color: #E71414;
+  background: #E71414;
+}
+.download__btn:active {
+  box-shadow: 4px 4px 30px #FF4343;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .download__btn {
+    max-width: 313px;
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .download__btn {
+    max-width: 279px;
+    font-size: 18px;
+    line-height: 21px;
+  }
 }/*# sourceMappingURL=style.css.map */
