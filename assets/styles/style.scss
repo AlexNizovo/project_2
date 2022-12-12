@@ -93,6 +93,7 @@ $color-red: #E71414;
                     top: 100%;
                     left: 0;
                     transform: translateY(-100%);
+                    transition: all .3s linear;
                 }
 
                 &:hover::before {
@@ -234,6 +235,7 @@ $color-red: #E71414;
         background: #FE4343;
         text-decoration: none;
         padding: 24px 0;
+        transition: all .3s linear;
 
         @media (min-width: 768px) and (max-width: 1024px) {
             min-width: 314px;
@@ -407,6 +409,7 @@ $color-red: #E71414;
             height: 100%;
             z-index: 1;
             opacity: 0;
+            transition: all .3s linear;
 
             @media (min-width: 768px) and (max-width: 1024px) {
                 row-gap: 12px;
@@ -473,18 +476,17 @@ $color-red: #E71414;
 }
 
 .team {
-    @include containerStyle();
     margin-bottom: 114px;
+
+    .container {
+        @include containerStyle();
+    }
     
     &__wrap {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 30px;
-
-        //этот отступ у обертки, а не у контейнера
-       
-
 
         @media (min-width: 768px) and (max-width: 1024px) {
             gap: 25px;
@@ -529,7 +531,6 @@ $color-red: #E71414;
 
         }
 
-        //здесь вынесена вложенность как пример
         &-img {
             position: absolute;
             width: 100%;
@@ -608,6 +609,7 @@ $color-red: #E71414;
         &-messangers {
             display: flex;
             align-items: center;
+            column-gap: 6px;
         }
 
         &-link {
@@ -624,4 +626,241 @@ $color-red: #E71414;
             }
         }
     }
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+    margin-bottom: 114px;
+    
+    @media (min-width: 768px) and (max-width: 1024px) {
+        row-gap: 23PX;
+        margin-bottom: 78px;
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+        grid-template-columns: 1fr;
+        margin-bottom: 45px;
+        row-gap: 0;
+    }
+
+    &__photo {
+        
+        @media (min-width: 320px) and (max-width: 767px) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__testimonial {
+        padding-top: 116px;
+        padding-bottom: 116px;
+        background: #5C3249;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-block {
+            max-width: 471px;
+            width: 100%;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                max-width: 330px;
+            }
+        
+            @media (min-width: 320px) and (max-width: 767px) {
+                max-width: 275px;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            padding-top: 47px;
+            padding-bottom: 110px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            padding-top: 30px;
+            padding-bottom: 95px;
+            margin-bottom: 23px;
+        }
+    }
+
+    .testimonial__title {
+        font-family: "Cardo", serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 49px;
+        text-transform: capitalize;
+        margin-bottom: 29px;
+        color: #FFFFFF;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            font-size: 24px;
+            line-height: 32px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+
+    .testimonial__text {
+        font-family: $font-Raleway;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+
+    &__dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        column-gap: 25px;
+
+        &-slide {
+            border-radius: 50%;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #7E5D6F;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                width: 9px;
+                height: 9px;
+                }
+        
+            @media (min-width: 320px) and (max-width: 767px) {
+                width: 9px;
+                height: 9px;
+            }
+        }
+        .active {
+            background: #7E5D6F;
+        }
+    }
+}
+
+.download {
+    text-align: center;
+    margin-bottom: 114px;
+    
+    .container {
+        @include containerStyle();
+    }
+
+    &__wrap {
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            margin-bottom: 78px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            margin-bottom: 45px;
+        }
+
+    }
+
+    &__title {
+        font-family: $font-Raleway;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 35px;
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 27px;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            font-size: 24px;
+            line-height: 28px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 18px;
+            line-height: 21px;
+            margin-bottom: 25px;
+        }
+    }
+
+    &__text {
+        font-family: $font-Raleway;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 52px;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 44px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 13px;
+            line-height: 15px;
+            margin-bottom: 13px;
+        }
+    }
+
+    &__btn {
+        max-width: 370px;
+        width: 100%;
+        font-family: $font-Raleway;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        text-transform: uppercase;
+        background: #FF4343;
+        color: $color-white;
+        border: 1px solid #FF4343;
+        padding: 25px 0;
+        transition: all .3s linear;
+
+        &:hover {
+            border-color: #E71414;
+            background: #E71414;
+            cursor: pointer;
+        }
+
+        &:active {
+            box-shadow: 4px 4px 30px #FF4343;
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            max-width: 313px;
+            font-size: 18px;
+            line-height: 21px;
+        }
+    
+        @media (min-width: 320px) and (max-width: 767px) {
+            max-width: 279px;
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+
 }
