@@ -93,6 +93,7 @@ $color-red: #E71414;
                     top: 100%;
                     left: 0;
                     transform: translateY(-100%);
+                    transition: all .3s linear;
                 }
 
                 &:hover::before {
@@ -234,6 +235,7 @@ $color-red: #E71414;
         background: #FE4343;
         text-decoration: none;
         padding: 24px 0;
+        transition: all .3s linear;
 
         @media (min-width: 768px) and (max-width: 1024px) {
             min-width: 314px;
@@ -407,6 +409,7 @@ $color-red: #E71414;
             height: 100%;
             z-index: 1;
             opacity: 0;
+            transition: all .3s linear;
 
             @media (min-width: 768px) and (max-width: 1024px) {
                 row-gap: 12px;
@@ -473,18 +476,17 @@ $color-red: #E71414;
 }
 
 .team {
-    @include containerStyle();
     margin-bottom: 114px;
+
+    .container {
+        @include containerStyle();
+    }
     
     &__wrap {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 30px;
-
-        //этот отступ у обертки, а не у контейнера
-       
-
 
         @media (min-width: 768px) and (max-width: 1024px) {
             gap: 25px;
@@ -529,7 +531,6 @@ $color-red: #E71414;
 
         }
 
-        //здесь вынесена вложенность как пример
         &-img {
             position: absolute;
             width: 100%;
@@ -608,6 +609,7 @@ $color-red: #E71414;
         &-messangers {
             display: flex;
             align-items: center;
+            column-gap: 6px;
         }
 
         &-link {
@@ -658,15 +660,34 @@ $color-red: #E71414;
     }
 
     &__testimonial {
-        padding: 116px 170px 116px 129px;
+        padding-top: 116px;
+        padding-bottom: 116px;
         background: #5C3249;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-block {
+            max-width: 471px;
+            width: 100%;
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                max-width: 330px;
+            }
+        
+            @media (min-width: 320px) and (max-width: 767px) {
+                max-width: 275px;
+            }
+        }
 
         @media (min-width: 768px) and (max-width: 1024px) {
-            padding: 47px 104px 110px 88px;
+            padding-top: 47px;
+            padding-bottom: 110px;
         }
     
         @media (min-width: 320px) and (max-width: 767px) {
-            padding: 30px 25px 95px 20px;
+            padding-top: 30px;
+            padding-bottom: 95px;
             margin-bottom: 23px;
         }
     }
@@ -743,11 +764,13 @@ $color-red: #E71414;
 
 .download {
     text-align: center;
-
-    @include containerStyle();
+    margin-bottom: 114px;
+    
+    .container {
+        @include containerStyle();
+    }
 
     &__wrap {
-        margin-bottom: 114px;
 
         @media (min-width: 768px) and (max-width: 1024px) {
             margin-bottom: 78px;
@@ -815,10 +838,12 @@ $color-red: #E71414;
         color: $color-white;
         border: 1px solid #FF4343;
         padding: 25px 0;
+        transition: all .3s linear;
 
         &:hover {
             border-color: #E71414;
             background: #E71414;
+            cursor: pointer;
         }
 
         &:active {

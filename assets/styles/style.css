@@ -86,6 +86,7 @@
   top: 100%;
   left: 0;
   transform: translateY(-100%);
+  transition: all 0.3s linear;
 }
 .header__menu-list .menu__item-link:hover::before {
   border: 3px solid #BABBC5;
@@ -223,6 +224,7 @@
   background: #FE4343;
   text-decoration: none;
   padding: 24px 0;
+  transition: all 0.3s linear;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .banner__btn {
@@ -405,6 +407,7 @@
   height: 100%;
   z-index: 1;
   opacity: 0;
+  transition: all 0.3s linear;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .works__work-info {
@@ -469,11 +472,13 @@
 }
 
 .team {
+  margin-bottom: 114px;
+}
+.team .container {
   max-width: 1170px;
   padding: 0 15px;
   margin: 0 auto;
   position: relative;
-  margin-bottom: 114px;
 }
 .team__wrap {
   display: flex;
@@ -609,6 +614,8 @@
 .team__person-messangers {
   display: flex;
   align-items: center;
+  -moz-column-gap: 6px;
+       column-gap: 6px;
 }
 .team__person-link {
   display: flex;
@@ -659,17 +666,37 @@
      object-position: center;
 }
 .testimonials__testimonial {
-  padding: 116px 170px 116px 129px;
+  padding-top: 116px;
+  padding-bottom: 116px;
   background: #5C3249;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonials__testimonial-block {
+  max-width: 471px;
+  width: 100%;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .testimonials__testimonial-block {
+    max-width: 330px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .testimonials__testimonial-block {
+    max-width: 275px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .testimonials__testimonial {
-    padding: 47px 104px 110px 88px;
+    padding-top: 47px;
+    padding-bottom: 110px;
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .testimonials__testimonial {
-    padding: 30px 25px 95px 20px;
+    padding-top: 30px;
+    padding-bottom: 95px;
     margin-bottom: 23px;
   }
 }
@@ -748,13 +775,13 @@
 
 .download {
   text-align: center;
+  margin-bottom: 114px;
+}
+.download .container {
   max-width: 1170px;
   padding: 0 15px;
   margin: 0 auto;
   position: relative;
-}
-.download__wrap {
-  margin-bottom: 114px;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .download__wrap {
@@ -824,10 +851,12 @@
   color: #FFFFFF;
   border: 1px solid #FF4343;
   padding: 25px 0;
+  transition: all 0.3s linear;
 }
 .download__btn:hover {
   border-color: #E71414;
   background: #E71414;
+  cursor: pointer;
 }
 .download__btn:active {
   box-shadow: 4px 4px 30px #FF4343;
